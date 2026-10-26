@@ -5,9 +5,9 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { href: '#index', label: 'Index' },
-  { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
+  { href: '/#index', label: 'Index' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#about', label: 'About' },
 ]
 
 export function SiteHeader() {
@@ -31,7 +31,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-10">
-        <a href="#top" className="text-lg font-extrabold tracking-[0.18em]" aria-label="SOOMIN 홈으로">
+        <a href="/#top" className="text-lg font-extrabold tracking-[0.18em]" aria-label="SOOMIN 홈으로">
           SOOMIN
         </a>
 
@@ -46,7 +46,7 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-colors hover:bg-accent"
           >
             Contact
@@ -68,7 +68,7 @@ export function SiteHeader() {
       {open && (
         <nav id="mobile-nav" aria-label="모바일 메뉴" className="border-t border-border px-5 pb-6 pt-2 md:hidden">
           <ul className="flex flex-col">
-            {[...navItems, { href: '#contact', label: 'Contact' }].map((item) => (
+            {[...navItems, { href: '/#contact', label: 'Contact' }].map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}

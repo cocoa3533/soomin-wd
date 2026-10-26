@@ -18,6 +18,21 @@ export type Project = {
   metrics: Metric[]
 }
 
+export function getProjectHref(slug: string) {
+  return `/work/${slug}`
+}
+
+export function getProjectBySlug(slug: string) {
+  const index = projects.findIndex((project) => project.slug === slug)
+  if (index === -1) return null
+  return {
+    project: projects[index],
+    index,
+    prev: projects[(index - 1 + projects.length) % projects.length],
+    next: projects[(index + 1) % projects.length],
+  }
+}
+
 export const projects: Project[] = [
   {
     slug: 'lane',
